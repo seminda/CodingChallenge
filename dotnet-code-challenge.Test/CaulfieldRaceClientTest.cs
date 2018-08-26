@@ -23,13 +23,13 @@ namespace dotnet_code_challenge.Test
             _dataClient.ReadXmlData(Arg.Any<string>()).Returns(RaceResponse());
 
             //Act
-            var caulfieldRaceData = _caulfieldRaceClient.GetRaceData();
+            var caulfieldRaceData = _caulfieldRaceClient.GetRacesData();
 
             //Assert
             Assert.NotNull(caulfieldRaceData);
             Assert.Single(caulfieldRaceData);
             Assert.Equal(1, caulfieldRaceData[0].Id);
-            Assert.Equal<string>("Test Horse 1", caulfieldRaceData[0].Name);
+            Assert.Equal("Test Horse 1", caulfieldRaceData[0].Name);
             Assert.Equal(4.2m, caulfieldRaceData[0].Price);
 
         }
@@ -41,7 +41,7 @@ namespace dotnet_code_challenge.Test
             _dataClient.ReadXmlData(Arg.Any<string>()).Returns(new List<CaulfieldRace>());
 
             //Act
-            var caulfieldRaceData = _caulfieldRaceClient.GetRaceData();
+            var caulfieldRaceData = _caulfieldRaceClient.GetRacesData();
 
             //Assert
             Assert.NotNull(caulfieldRaceData);
@@ -86,11 +86,7 @@ namespace dotnet_code_challenge.Test
                     }
                 }
             };
-
-
             return data;
         }
     }
-}
-
 }
