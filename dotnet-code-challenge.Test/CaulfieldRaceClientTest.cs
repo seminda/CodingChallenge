@@ -49,7 +49,7 @@ namespace dotnet_code_challenge.Test
 
         }
 
-        private List<CaulfieldRace> RaceResponse()
+        private static List<CaulfieldRace> RaceResponse()
         {
             var data = new List<CaulfieldRace>
             {
