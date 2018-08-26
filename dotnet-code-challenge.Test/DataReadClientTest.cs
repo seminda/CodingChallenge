@@ -1,4 +1,6 @@
 using dotnet_code_challenge.DataClients;
+using dotnet_code_challenge.Model.Caulfield;
+using dotnet_code_challenge.Model.Wolferhampton;
 using Xunit;
 
 namespace dotnet_code_challenge.Test
@@ -8,7 +10,7 @@ namespace dotnet_code_challenge.Test
         [Fact]
         public void ReadXmlData_Sucess()
         {
-            IDataReadClient dataReadClient = new DataReadClient<CaulfieldRace>();
+            IDataReadClient<CaulfieldRace> dataReadClient = new DataReadClient<CaulfieldRace>();
 
             var data = dataReadClient.ReadXmlData("Caulfield_");
 
